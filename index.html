@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Profile Frame</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="frame-container">
+        <!-- Top Section: Account Information -->
+        <div class="top-section">
+            <h1 id="account-name">Account Name</h1>
+            <p id="total-playtime">Total Playtime: <span class="highlight">0</span> hours</p>
+            <p id="account-creation">Joined: <span class="highlight">Date</span></p>
+        </div>
+
+        <!-- Main Section: Background with Most Played Game -->
+        <div class="main-section">
+            <div class="most-played-game" id="most-played-game">
+                <img src="game-image.jpg" alt="Most Played Game">
+                <div class="most-played-game-overlay">
+                    <p id="most-played-game-title">Most Played Game Title</p>
+                    <p id="most-played-game-hours">0 hrs played</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top 5 Games Section -->
+        <div class="top-games-section">
+            <h2>Top 5 Games</h2>
+            <ul id="top-games-list">
+                <!-- Games will be injected here via JS -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
