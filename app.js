@@ -1,22 +1,21 @@
-// API key and SteamID64 provided
+const corsProxy = 'https://cors-anywhere.herokuapp.com/';
 const apiKey = 'AD2A59088D9710B4817756BA30AD1F0C';
 const steamId = '76561198017914494'; // Your SteamID64
 
-// Fetching player summaries (account details)
 async function getPlayerSummaries() {
-    const url = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${apiKey}&steamids=${steamId}`;
+    const url = `${corsProxy}http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${apiKey}&steamids=${steamId}`;
     const response = await fetch(url);
     const data = await response.json();
     return data.response.players[0];
 }
 
-// Fetching top played games
 async function getTopPlayedGames() {
-    const url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${apiKey}&steamid=${steamId}&include_appinfo=1&include_played_free_games=1`;
+    const url = `${corsProxy}http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${apiKey}&steamid=${steamId}&include_appinfo=1&include_played_free_games=1`;
     const response = await fetch(url);
     const data = await response.json();
     return data.response.games;
 }
+
 
 // Function to display data on the page
 async function displaySteamData() {
